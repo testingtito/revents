@@ -1,17 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './app/layout/styles.css';
 import App from './app/layout/App';
 
 const rootEl = document.getElementById('root');
 
 let render = () => {
-  ReactDOM.render(
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>,
-    rootEl
-  );
+  ReactDOM.render(<App />, rootEl);
 };
 
 if (module.hot) {
@@ -21,4 +16,3 @@ if (module.hot) {
 }
 
 render();
-
