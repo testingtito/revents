@@ -1,37 +1,32 @@
-import React, { Component } from 'react';
-import { Form, Segment, Button } from 'semantic-ui-react';
+import React from 'react';
+import { Segment, Header, Form, Button } from 'semantic-ui-react';
 
-export default class EventForm extends Component {
-  render() {
-    return (
-      <Segment>
-        <Form>
-          <Form.Field>
-            <label>Event Title</label>
-            <input placeholder='First Name' />
-          </Form.Field>
-          <Form.Field>
-            <label>Event Date</label>
-            <input type='date' placeholder='Event Date' />
-          </Form.Field>
-          <Form.Field>
-            <label>City</label>
-            <input placeholder='City event is taking place' />
-          </Form.Field>
-          <Form.Field>
-            <label>Venue</label>
-            <input placeholder='Enter the Venue of the event' />
-          </Form.Field>
-          <Form.Field>
-            <label>Hosted By</label>
-            <input placeholder='Enter the name of person hosting' />
-          </Form.Field>
-          <Button positive type='submit'>
-            Submit
-          </Button>
-          <Button type='button'>Cancel</Button>
-        </Form>
-      </Segment>
-    );
-  }
-}
+export const EventForm = ({ setFormOpen }) => {
+  return (
+    <Segment clearing>
+      <Header content='Create new event' />
+      <Form>
+        <Form.Field>
+          <input type='text' placeholder='Event title' />
+        </Form.Field>
+        <Form.Field>
+          <input type='text' placeholder='Category' />
+        </Form.Field>
+        <Form.Field>
+          <input type='text' placeholder='Description' />
+        </Form.Field>
+        <Form.Field>
+          <input type='text' placeholder='City' />
+        </Form.Field>
+        <Form.Field>
+          <input type='text' placeholder='Venue' />
+        </Form.Field>
+        <Form.Field>
+          <input type='date' placeholder='Date' />
+        </Form.Field>
+        <Button type='submit' floated='right' positive content='Submit' />
+        <Button onClick={() => setFormOpen(false)} type='submit' floated='right' content='Cancel' />
+      </Form>
+    </Segment>
+  );
+};
