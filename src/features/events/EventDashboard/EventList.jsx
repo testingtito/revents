@@ -1,12 +1,12 @@
 import React from 'react'
 import {EventListItem} from './EventListItem'
 
-export const EventList = ({events}) => {
+export const EventList = ({events, selectEvent}) => {
   return (
     <>
     {
       events.map(event=>(
-        <EventListItem event={event} key={event.id} />
+        <EventListItem event={event} key={event.id} selectEvent={selectEvent}/>
       ))
     }
     </>
